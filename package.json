@@ -1,0 +1,23 @@
+{
+  "name": "mycloset",
+  "version": "1.0.0",
+  "description": "README for MyCloset\r Link:\r Documentation for project should be uploaded to repo, but link to updating google doc is here:\r https://docs.google.com/document/d/1JsC1jCoCDP1iO-WRUUEZuoGplecfunY0QgpA3ehcjxI/edit?usp=sharing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/METrimble/MyCloset.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/METrimble/MyCloset/issues"
+  },
+  "homepage": "https://github.com/METrimble/MyCloset#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
