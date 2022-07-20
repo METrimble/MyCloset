@@ -18,14 +18,26 @@ app.engine('handlebars', engine({
     defaultLayout: "main"
 }));
 app.set('view engine', 'handlebars');
-app.set("views", "./views");
+app.use(express.static("static"));
 
 app.use(express.static('public'));
 
+//load homepage
 app.get('/', function (req, res) {
-    res.render('test');
+    res.render('homepage');
 });
 
+//load outfit builder
+app.get('/outfitbuilder', function (req, res) {
+    res.render('outfitbuilder');
+});
+
+//load outfit editor
+app.get('/outfitviewer', function (req, res) {
+    res.render('outfitviewer');
+});
+
+//connect mysql
 db.connect((err) => {
     if(err){
         throw err;
@@ -33,6 +45,7 @@ db.connect((err) => {
     console.log('MySQL connected..');
 });
 
+//listen on port 3000
 app.listen('3000', () => {
     console.log('Server started on port');
 });
