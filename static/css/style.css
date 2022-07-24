@@ -1,0 +1,63 @@
+body{
+    background-color: #eedfdc;
+}
+
+#site-logo-container {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#site-logo-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.mainpage-link-container {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    top: 70px;
+}
+
+.mainpage-link-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*build outfit page*/
+
+#buildoutfit-logo-container {
+    width: 40%;
+    padding-bottom: 20px;
+}
+
+#buildoutfit-logo-img {
+    display: block;
+    width: 48%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#doll-container {
+    position: relative;
+    background-color: #f7f6f4;
+    width: 40%;
+}
+
+.dressup-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#baseclothing-img {
+    position: absolute;
+    top: 0; 
+    right: 0;
+}

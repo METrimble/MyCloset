@@ -15,11 +15,10 @@ const db = mysql.createConnection({
 const app = express();
 
 app.engine('handlebars', engine({ 
-    defaultLayout: "main"
+//    defaultLayout: "main"
 }));
 app.set('view engine', 'handlebars');
 app.use(express.static("static"));
-
 app.use(express.static('public'));
 
 //load homepage
