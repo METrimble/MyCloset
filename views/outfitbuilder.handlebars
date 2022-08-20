@@ -12,14 +12,30 @@
         <img id="baseclothing-img" class="dressup-img" src="images/baseclothingtop.png"/>
         
         <div class="clothing-tab">
-            <button class="tab-link active" onclick="openTabContent(event, 'tops')" id="default-tab">T</button>
-            <button class="tab-link" onclick="openTabContent(event, 'bottoms')">B</button>
-            <button class="tab-link" onclick="openTabContent(event, 'dresses')">D</button>
-            <button class="tab-link" onclick="openTabContent(event, 'socks')">S</button>
-            <button class="tab-link" onclick="openTabContent(event, 'shoes')">S</button>
-            <button class="tab-link" onclick="openTabContent(event, 'accessories')">A</button>
-            <button class="tab-link" onclick="openTabContent(event, 'bags')">B</button>
-            <button class="tab-link" onclick="openTabContent(event, 'outerwear')">O</button>
+            <button class="tab-link active" onclick="openTabContent(event, 'tops')" id="default-tab">
+                <img class="tab-img" src="images/topicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'bottoms')">
+                <img class="tab-img" src="images/bottomicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'dresses')">
+                <img class="tab-img" src="images/dressicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'socks')">
+                <img class="tab-img" src="images/socksicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'shoes')">
+                <img class="tab-img" src="images/shoesicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'accessories')">
+                <img class="tab-img" src="images/accessoriesicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'bags')">
+                <img class="tab-img" src="images/bagicon2.png"/>
+            </button>
+            <button class="tab-link" onclick="openTabContent(event, 'outerwear')">
+                <img class="tab-img" src="images/outerwearicon2.png"/>
+            </button>
         </div>
 
         <div id="finish-button-container">
@@ -36,8 +52,14 @@
             <div class="items">
                 <div class="item-container">
                     <img class="item-image" src="images/whitefrillytee-cropped.png"/>
-                    <input type="checkbox"/>
-                    <div class='item-heart' class="button"></div>
+                    <input type="radio" name="top" value="whitefrillytee">
+                    <!--<div class='item-heart' class="button"></div>-->
+                </div>
+
+                <div class="item-container">
+                    <img class="item-image" src="images/whitefrillytee-cropped.png"/>
+                    <input type="radio" name="top" value="whitefrillytee2">
+                    <!--<div class='item-heart' class="button"></div>-->
                 </div>
             </div>
             <!--

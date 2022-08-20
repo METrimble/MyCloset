@@ -127,6 +127,10 @@ body{
     background-color: #eedfdc;
 }
 
+.tab-img {
+    width: 70%;
+}
+
 .tab-content {
     float: left;
 }
@@ -156,9 +160,27 @@ body{
     background-color: #f7f6f4;
     width: 30%;
     margin-left: 10px;
-    height: 50%;
+    height: 53%;
 }
 
 .item-image {
     width: 100%;
+}
+
+/*https://www.bryntum.com/blog/3-ways-to-style-radio-buttons-with-modern-css/*/
+input[type="radio"]{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 25%;
+    border: 0.2rem solid #f7f6f4;
+    box-shadow: 0 0 0 4px #e8bfc3;
+}
+
+input[type="radio"]:checked{
+    box-shadow: 0 0 0 4px #e8bfc3;
+    background: #e8bfc3;
+    border-width: 0.2rem;
 }
