@@ -161,6 +161,7 @@ body{
     width: 30%;
     margin-left: 10px;
     height: 53%;
+    margin-bottom: 10px;
 }
 
 .item-image {
@@ -183,4 +184,46 @@ input[type="radio"]:checked{
     box-shadow: 0 0 0 4px #e8bfc3;
     background: #e8bfc3;
     border-width: 0.2rem;
+}
+
+.filter-container{
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    width: 350px;
+    height: 200px;
+    background-color: #f7f6f4;
+    border-top-left-radius: 10px;
+    padding-left: 20px;
+    padding-top: 15px;
+
+    font-family: "Jua";
+    font-size: 20px;
+    color: #e59a9f;
+    line-height: 0.1;
+}
+
+.filter-dropdown {
+    width: 50%;
+    height: 30px;
+    border: none;
+    font-family: "Jua";
+    font-size: 18px;
+    color: #e8bfc3;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background-color: #e59a9f;
+    border: none;
+    color: #f7f6f4;
+    margin-top: 6px;
+    width: 20%;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "Jua";
+    font-size: 18px;
+
+    position: absolute;
+    right: 20px;
 }
