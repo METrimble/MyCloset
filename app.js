@@ -9,7 +9,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'my$pass',
-    database: 'MyCloset'
+    database: 'mycloset'
 });
 
 const app = express();
@@ -21,6 +21,9 @@ app.set('view engine', 'handlebars');
 app.use(express.static("static"));
 app.use(express.static('public'));
 
+console.log("test in app.js");
+app.use('/outfitbuilder', require('./top.js'));
+
 //load homepage
 app.get('/', function (req, res) {
     res.render('homepage');
@@ -28,6 +31,7 @@ app.get('/', function (req, res) {
 
 //load outfit builder
 app.get('/outfitbuilder', function (req, res) {
+    console.log("rendering outfitbuilder");
     res.render('outfitbuilder');
 });
 
@@ -37,12 +41,12 @@ app.get('/outfitviewer', function (req, res) {
 });
 
 //connect mysql
-db.connect((err) => {
+/*db.connect((err) => {
     if(err){
         throw err;
     }
     console.log('MySQL connected..');
-});
+});*/
 
 //listen on port 3000
 app.listen('3000', () => {
