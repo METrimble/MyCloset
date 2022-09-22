@@ -1,18 +1,18 @@
 //reference used: https://www.youtube.com/watch?v=EN6Dx22cPRI&ab_channel=TraversyMedia
 const express = require('express');
-const mysql = require('mysql2'); //update avoids error relating to connection
+//const mysql = require('mysql2'); //update avoids error relating to connection
 const { engine } = require('express-handlebars');
 const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
 //Create Connection to mysql
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'my$pass',
     database: 'mycloset'
-});
+}); */
 
 const app = express();
 
@@ -48,15 +48,14 @@ app.get('/outfitviewer', function (req, res) {
     res.render('outfitviewer');
 });
 
-
-
+/*
 //connect mysql
 db.connect((err) => {
     if(err){
         throw err;
     }
     console.log('MySQL connected..');
-});
+}); */
 
 //listen on port 3000
 app.listen('3000', () => {

@@ -38,7 +38,23 @@ const express = require('express');
 var router = express.Router();
 module.exports = router;
 
+const mysql = require('mysql2');
+
+//Create Connection to mysql
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'my$pass',
+    database: 'mycloset'
+});
+
 router.get('/', function(req, res){
-    console.log("here");
-    res.render('outfitbuilder');
+    db.query("SELECT t.ID, t.Type, t.Color, i.path AS path, zi.path AS zpath FROM top AS t, image AS i, zoomed_image AS zi;", (err, tops) => {
+        if(!err){
+            res.render('outfitbuilder', {tops});
+        }
+        else{
+            console.log(err);
+        }
+    });
 });
