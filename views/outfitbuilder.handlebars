@@ -56,7 +56,6 @@
                     <input type="radio" name="top" value="{{ID}}"> 
                 </div>
                 {{/each}}
-                
             </div>
             <div id="filter-tops" class="filter-container">
                 <form>
@@ -100,58 +99,357 @@
         </div>
 
         <div id="bottoms" class="tabcontent">
-            <p>bottoms</p>
+            <div class="items">
+                {{#each bottoms}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-bottoms">
-                
+            <div id="filter-bottoms" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="Jeans">Jeans</option>
+                            <option value="Leggings">Leggings</option>
+                            <option value="Short-Skirt">Short-Skirt</option>
+                            <option value="Long-Skirt">Long-Skirt</option>
+                            <option value="Shorts">Shorts</option>
+                            <option value="Sweats">Sweats</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="dresses" class="tabcontent">
-            <p>dresses</p>
+            <div class="items">
+                {{#each dresses}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-dresses">
-                
+            <div id="filter-dresses" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Dress Length</p>
+                        <select class="filter-dropdown">
+                            <option value="Short">Short</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Long">Long</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-option">
+                        <p>Filter By Sleeve Length</p>
+                        <select class="filter-dropdown">
+                            <option value="No-Sleeve">No-Sleeve</option>
+                            <option value="Short-Sleeve">Short-Sleeve</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Long-Sleeve">Long-Sleeve</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="socks" class="tabcontent">
-            <p>Socks</p>
+            <div class="items">
+                {{#each socks}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-socks">
-                
+            <div id="filter-socks" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="No-Show">No-Show</option>
+                            <option value="Ankle">Ankle</option>
+                            <option value="Long">Long</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="shoes" class="tabcontent">
-            <p>Shoes</p>
+            <div class="items">
+                {{#each shoes}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-shoes">
-                
+            <div id="filter-shoes" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="Boots">Boots</option>
+                            <option value="Tennis-Shoes">Tennis-Shoes</option>
+                            <option value="Sandals">Sandals</option>
+                            <option value="Flats">Flats</option>
+                            <option value="Heels">Heels</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="accessories" class="tabcontent">
-            <p>accessories</p>
+            <div class="items">
+                {{#each accessories}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-accessories">
-                
+            <div id="filter-accessories" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="Necklace">Necklace</option>
+                            <option value="Earrings">Earrings</option>
+                            <option value="Belt">Belt</option>
+                            <option value="Ring">Ring</option>
+                            <option value="Bracelet">Bracelet</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="bags" class="tabcontent">
-            <p>bags</p>
+            <div class="items">
+                {{#each bags}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-bags">
-                
+            <div id="filter-bags" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="Backpack">Backpack</option>
+                            <option value="Over-The-Shoulder">Over-The-Shoulder</option>
+                            <option value="Tote">Tote</option>
+                            <option value="Purse">Purse</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 
         <div id="outerwear" class="tabcontent">
-            <p>outerwear</p>
+            <div class="items">
+                {{#each outerwear}}
+                <div class="item-container">
+                    <img class="item-image" src="{{zpath}}"/>
+                    <input type="radio" name="top" value="{{ID}}"> 
+                </div>
+                {{/each}}
+            </div>
 
-            <div id="filter-outerwear">
-                
+            <div id="filter-outerwear" class="filter-container">
+                <form>
+                    <div class="filter-option">
+                        <p>Filter By Type</p>
+                        <select class="filter-dropdown">
+                            <option value="ZipUp-Hoodie">ZipUp-Hoodie</option>
+                            <option value="Hoodie">Hoodie</option>
+                            <option value="Rain-Jacket">Rain-Jacket</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="Cardigan">Cardigan</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-option">
+                        <p>Filter By Color</p>
+                        <select class="filter-dropdown">
+                            <option value="White">White</option>
+                            <option value="Black">Black</option>
+                            <option value="Brown">Brown</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Light-Green">Light-Green</option>
+                            <option value="Green">Green</option>
+                            <option value="Light-Blue">Light-Blue</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Mixed">Mixed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" class="filter-button" value="Fliter">
+                </form>
             </div>
         </div>
 

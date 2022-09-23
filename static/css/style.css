@@ -203,6 +203,10 @@ input[type="radio"]:checked{
     line-height: 0.1;
 }
 
+#filter-dresses{
+    height: 265px;
+}
+
 .filter-dropdown {
     width: 50%;
     height: 30px;

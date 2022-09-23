@@ -29,13 +29,12 @@ app.use(express.static("static"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 //load homepage
 app.get('/', function (req, res) {
     res.render('homepage');
 });
 
-app.use('/outfitbuilder', require('./top.js'));
+app.use('/outfitbuilder', require('./server.js'));
 /*
 //load outfit builder
 app.get('/outfitbuilder', function (req, res) {
