@@ -114,6 +114,7 @@ function getOuterwear(res, context, complete){
 router.get('/', function(req, res){
     var context = {};
     var counter = 0;
+    
     getTops(res, context, complete);
     getBottoms(res, context, complete);
     getDresses(res, context, complete);
