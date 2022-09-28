@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2022 at 03:00 AM
+-- Generation Time: Sep 28, 2022 at 05:07 AM
 -- Server version: 8.0.29
 -- PHP Version: 8.1.7
 
@@ -237,6 +237,31 @@ CREATE TABLE `top` (
 INSERT INTO `top` (`ID`, `Image_id`, `Type`, `Color`, `zoomed_image_id`) VALUES
 (1, 2, 'T-Shirt', 'White', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zoomed_image`
+--
+
+CREATE TABLE `zoomed_image` (
+  `ID` int NOT NULL,
+  `path` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `zoomed_image`
+--
+
+INSERT INTO `zoomed_image` (`ID`, `path`) VALUES
+(2, 'images/whitefrillytee-cropped.png'),
+(3, 'images/lightbluejeans-cropped.png'),
+(4, 'images/bluefloraldress-cropped.png'),
+(5, 'images/whiteanklesocks-cropped.png'),
+(6, 'images/whitetennisshoes-cropped.png'),
+(7, 'images/silverearrings-cropped.png'),
+(8, 'images/totebag-cropped.png'),
+(9, 'images/greenhoodie-cropped.png');
+
 --
 -- Indexes for dumped tables
 --
@@ -326,6 +351,12 @@ ALTER TABLE `top`
   ADD KEY `zoomed_image_id` (`zoomed_image_id`);
 
 --
+-- Indexes for table `zoomed_image`
+--
+ALTER TABLE `zoomed_image`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -388,6 +419,12 @@ ALTER TABLE `sock`
 --
 ALTER TABLE `top`
   MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `zoomed_image`
+--
+ALTER TABLE `zoomed_image`
+  MODIFY `ID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
