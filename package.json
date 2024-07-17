@@ -4,7 +4,8 @@
   "description": "README for MyCloset\r Link:\r Documentation for project should be uploaded to repo, but link to updating google doc is here:\r https://docs.google.com/document/d/1JsC1jCoCDP1iO-WRUUEZuoGplecfunY0QgpA3ehcjxI/edit?usp=sharing",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,9 @@
   "homepage": "https://github.com/METrimble/MyCloset#readme",
   "dependencies": {
     "dotenv": "^16.0.2",
-    "express": "^4.18.1",
+    "express": "^4.19.2",
     "express-handlebars": "^6.0.6",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.3"
   }
 }

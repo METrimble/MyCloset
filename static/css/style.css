@@ -60,7 +60,6 @@ body{
 
 .dressup-img {
     position: relative;
-    display: block;
     width: 92%;
     float:left;
     /*margin-left: auto;
@@ -73,6 +72,12 @@ body{
     top: 0; 
     left: 0;
     float:left;
+}
+
+#hidden-clothing-img {
+    position: absolute;
+    top: 0; 
+    left: 0;
 }
 
 #finish-button-container {

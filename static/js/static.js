@@ -21,9 +21,11 @@ function openTabContent(event, clothingItem) {
 
 //default tab: https://stackoverflow.com/questions/47771613/how-to-set-a-default-active-open-tab-in-html
 function loadTabs() {
-    document.getElementById("default-tab").click();
+    document.getElementById("default-tab").click(); //click the default tab
 
     var i, tabcontent;
+
+    console.log("here2");
 
     //retrieve all the elements with tabcontent as their class, and hide them before displaying anything
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -32,4 +34,20 @@ function loadTabs() {
     }
 
     document.getElementById("tops").style.display = "block";
+}
+
+function loadHiddenClothes() {
+    var i, hiddenClothes; 
+
+    console.log("in here!");
+
+    //retrieve all the elements with hidden-clothes-img as their id, and hide them before displaying anything
+    hiddenClothes = document.getElementsByClassName("hidden-clothing");
+    for(i = 0; i < hiddenClothes.length; i++){
+        hiddenClothes[i].style.display = "none"; 
+    }
+}
+
+function toggleViewClothing() {
+    //TODO
 }

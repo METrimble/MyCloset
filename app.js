@@ -6,14 +6,6 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-//Create Connection to mysql
-/*const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'my$pass',
-    database: 'mycloset'
-}); */
-
 const app = express();
 
 //handlebars
@@ -46,15 +38,6 @@ app.get('/outfitbuilder', function (req, res) {
 app.get('/outfitviewer', function (req, res) {
     res.render('outfitviewer');
 });
-
-/*
-//connect mysql
-db.connect((err) => {
-    if(err){
-        throw err;
-    }
-    console.log('MySQL connected..');
-}); */
 
 //listen on port 3000
 app.listen('3000', () => {

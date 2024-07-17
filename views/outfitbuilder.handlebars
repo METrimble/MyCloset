@@ -8,9 +8,32 @@
     <!-- default tab: https://stackoverflow.com/questions/47771613/how-to-set-a-default-active-open-tab-in-html-->
     <div id="doll-container">
         <img id="doll-img" class="dressup-img" src="images/doll.png"/>
-        <img id="baseclothing-img" class="dressup-img" src="images/baseclothingpants.png"/>
-        <img id="baseclothing-img" class="dressup-img" src="images/baseclothingtop.png"/>
-        
+        <!-- <img id="baseclothing-img" class="dressup-img" src="images/baseclothingpants.png"/>
+        <img id="baseclothing-img" class="dressup-img" src="images/baseclothingtop.png"/> -->
+        <div class="hidden-clothing">
+            <!--{{#each tops}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+            {{#each bottoms}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+            {{#each outerwear}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}-->
+            {{#each accessories}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+            {{#each dresses}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+            {{#each shoes}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+            {{#each bags}}
+                <img id="hidden-clothing-img" class="dressup-img" src="{{path}}"/>
+            {{/each}}
+        </div>
+
         <div class="clothing-tab">
             <button class="tab-link active" onclick="openTabContent(event, 'tops')" id="default-tab">
                 <img class="tab-img" src="images/topicon2.png"/>
@@ -53,7 +76,7 @@
                 {{#each tops}}
                 <div class="item-container">
                     <img class="item-image" src="{{zpath}}"/>
-                    <input type="radio" name="top" value="{{ID}}"> 
+                    <input type="radio" name="top" value="{{ID}}" onclick="toggleViewClothing())"> 
                 </div>
                 {{/each}}
             </div>
