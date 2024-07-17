@@ -1,5 +1,5 @@
 # README for MyCloset
-### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom designed. 
+### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom drawn. 
 
 ## Future Features
 This project is still currently a work in progress. Future features will include...
