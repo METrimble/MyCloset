@@ -2,7 +2,7 @@
 ### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom designed. 
 
 ## Future Features
-This project is still currently a work in progress. Future Features will include...
+This project is still currently a work in progress. Future features will include...
 - A publicly hosted site, so that the application can be accessed on any device 
 - A larger set of clothing pieces
 - The ability to select and change the current clothing piece worn
