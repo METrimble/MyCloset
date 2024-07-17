@@ -8,6 +8,7 @@ This project is still currently a work in progress. Future Features will include
 - The ability to select and change the current clothing piece worn
 - The ability to create, save, view, and delete sets of outfits
 
+## About 
 This project uses HTML / Handlebars, JavaScript, CSS, and nodejs to render pages.
 SQL and a local MySQL server are used to save information on multiple clothing assets and serve as a future way to save outfit combinations.
 
