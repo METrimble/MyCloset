@@ -1,7 +1,12 @@
 # README for MyCloset
-This project is still currently a work in progress. 
-
 ### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom designed. 
+
+## Future Features
+This project is still currently a work in progress. Future Features will include...
+- A publicly hosted site, so that the application can be accessed on any device 
+- A larger set of clothing pieces
+- The ability to select and change the current clothing piece worn
+- The ability to create, save, view, and delete sets of outfits
 
 This project uses HTML / Handlebars, JavaScript, CSS, and nodejs to render pages.
 SQL and a local MySQL server are used to save information on multiple clothing assets and serve as a future way to save outfit combinations.
