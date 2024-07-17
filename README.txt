@@ -6,4 +6,4 @@ MyCloset is a simple web app aimed to help me pick out outfits and make smart cl
 
 Screen Shots:
 
-[Site Intro Page](/screenshots/Screenshot%202024-07-17%20123425.png)
+[Site Intro Page](screenshots/Screenshot%202024-07-17%20123425.png)
