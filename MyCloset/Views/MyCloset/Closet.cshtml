@@ -1,0 +1,27 @@
+﻿@model List<MyCloset.Models.ClothingItem>
+@{
+	ViewData["Title"] = "Closet";
+}  
+
+<h3>Closet</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Stack</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var ClothingItem in Model)
+		{
+			<tr>
+				<td>@ClothingItem.Name</td>
+				<td>@ClothingItem.Type</td>
+				<td>@ClothingItem.StackType</td>
+				<td>@ClothingItem.ImageUrl</td>
+			</tr>
+		}
+	</tbody>
+</table>
