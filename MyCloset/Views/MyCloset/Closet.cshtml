@@ -1,4 +1,5 @@
-﻿@model List<MyCloset.Models.ClothingItem>
+﻿@using MyCloset.ViewModels
+@model MyCloset.ViewModels.MyClosetViewModel
 @{
 	ViewData["Title"] = "Closet";
 }  
@@ -14,13 +15,16 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach(var ClothingItem in Model)
+		@foreach(var ClothingItem in Model.ClothingItems)
 		{
+			var ClothingImagePath = Model.BlobContainerUri + "/" + ClothingItem.Name + "-cropped.png";
+			Console.WriteLine(ClothingImagePath);
+
 			<tr>
 				<td>@ClothingItem.Name</td>
 				<td>@ClothingItem.Type</td>
 				<td>@ClothingItem.StackType</td>
-				<td>@ClothingItem.ImageUrl</td>
+				<td><img src=@ClothingImagePath alt="Sample Image" width="300px" /></td>
 			</tr>
 		}
 	</tbody>

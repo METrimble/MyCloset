@@ -1,28 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyCloset.Data;
 using Microsoft.EntityFrameworkCore;
+using Azure.Storage.Blobs;
+using MyCloset.Models;
+using MyCloset.ViewModels;
 
 namespace MyCloset.Controllers
 {
 	public class MyClosetController : Controller
 	{
+		// Database context
 		private readonly Context _context;
 
-		// Database context
-		public MyClosetController(Context context)
+		// Blob Account Container and Stoage
+		private const string ContainerName = "mycloset";
+		private readonly BlobServiceClient _blobServiceClient;
+		private readonly BlobContainerClient _containerClient;
+
+		// Constructor
+		public MyClosetController(Context context, BlobServiceClient blobServiceClient)
 		{
 			_context = context;
+
+			_blobServiceClient = blobServiceClient;
+			_containerClient = _blobServiceClient.GetBlobContainerClient(ContainerName);
 		}
 
-		// Retrieve all clothing items from the database
-		// Use asynchronous action to retrieve data from the database
+		// Build the default closet view
 		public async Task<IActionResult> Closet()
 		{
-			// Clothing Items database set
-			var ClothingItems = await _context.ClothingItems.ToListAsync();
-		
 			// Wait until we get data back before returning the view
-			return View(ClothingItems);
+			var Closet = await _context.ClothingItems.ToListAsync();
+
+			// Create the MyCloset View Model
+			var MyCloset = new ViewModels.MyClosetViewModel();
+			MyCloset.ClothingItems = Closet;
+			MyCloset.BlobContainerUri = _containerClient.Uri;
+
+			return View(MyCloset);
 		}
 	}
 }
