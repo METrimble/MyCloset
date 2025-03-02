@@ -1,10 +1,25 @@
 ﻿namespace MyCloset.Models
 {
+    public enum ClothingType
+    {
+        Socks = 0,
+        Shoes = 1,
+        Bottoms = 2,
+        Top = 3,
+        Dress = 4,
+        Outerwear = 5,
+        Bag = 6,
+        Accessories = 7
+    }
+
     public class ClothingItem
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Type { get; set; }
+        public string NameDecode { get; set; }
+        public ClothingType Type { get; set; }
         public int StackType { get; set; }
+        public string ImageName { get; set; }
+        public string CroppedImageName { get; set; }
     }
 }

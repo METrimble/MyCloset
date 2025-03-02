@@ -1,31 +1,54 @@
 ﻿@using MyCloset.ViewModels
+@using System.Web.Mvc.Ajax
+
 @model MyCloset.ViewModels.MyClosetViewModel
 @{
 	ViewData["Title"] = "Closet";
-}  
+}
 
-<h3>Closet</h3>
-<table class="table">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Type</th>
-			<th>Stack</th>
-			<th>Image</th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach(var ClothingItem in Model.ClothingItems)
+<div class="doll-container">
+	<partial name="~/Views/Shared/_Doll.cshtml" model="@new Tuple<Doll, Uri>(Model.Doll, Model.BlobContainerUri)"></partial>
+</div>
+
+<form method="POST" asp-controller="MyCloset" asp-action="OnSelectClothingItem">
+	@{
+		<p>Current Time @DateTime.Now</p>
+
+		var Selected = false;
+
+		foreach (var ClothingItem in Model.ClothingItems) if (ClothingItem.Type == ClothingType.Top)
 		{
-			var ClothingImagePath = Model.BlobContainerUri + "/" + ClothingItem.Name + "-cropped.png";
-			Console.WriteLine(ClothingImagePath);
+			string ClothingImagePath = Model.BlobContainerUri + "/" + ClothingItem.CroppedImageName;
 
-			<tr>
-				<td>@ClothingItem.Name</td>
-				<td>@ClothingItem.Type</td>
-				<td>@ClothingItem.StackType</td>
-				<td><img src=@ClothingImagePath alt="Sample Image" width="300px" /></td>
-			</tr>
+			// If the clothing item exists on the doll, select it 
+			if(Model.Doll.ClothingItems.Any(c => ClothingItem.Id == c.Id))
+				Selected = true;
+			else
+				Selected = false;
+
+			<input type="checkbox" name="@ClothingItem.Name" value="@ClothingItem.Id" checked="@Selected" class="clothing-checkbox" />
+			<img src=@ClothingImagePath alt=@ClothingItem.NameDecode />
 		}
-	</tbody>
-</table>
+	}
+</form>
+
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+			$('.clothing-checkbox').change(function() {
+				var clicked = $(this);
+				$.ajax({
+						type: "POST",
+						url: "MyCloset/OnSelectClothingItem",
+						data: {Id: clicked.val()},
+						success: function(data)
+						{
+						},
+						error: function()
+						{
+						}
+				})
+			});
+		});
+	</script>
+}

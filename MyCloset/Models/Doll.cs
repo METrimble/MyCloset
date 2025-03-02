@@ -4,14 +4,18 @@
 	public class Doll
 	{
 		// List of the clothing items currently displayed on the doll
-		// only one of each clothing type will be selected at each time, enforced by the selector functions
+		// Only one of each clothing type can be selected at a time
 		public List<ClothingItem> ClothingItems { get; set; }
 
 		// Default Constructor
-		public Doll() 
+		public Doll(ClothingItem BaseTop, 
+					ClothingItem BaseBottom) 
 		{
-			// TODO: add default clothing
 			ClothingItems = new List<ClothingItem>();
+
+			// Set the default clothing items
+			ClothingItems.Add(BaseTop);
+			ClothingItems.Add(BaseBottom);
 		}
 
 		// Function to select / replace clothing items

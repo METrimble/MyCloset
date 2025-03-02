@@ -1,0 +1,13 @@
+﻿@using MyCloset.Models
+@model Tuple<Doll, Uri>
+@{
+}
+
+<img src="~/images/doll.png" alt="Doll" class="doll-image" />
+
+@foreach (var ClothingItem in Model.Item1.ClothingItems.OrderBy(c => c.StackType).ToList())
+{
+	string ClothingImagePath = Model.Item2 + "/" + ClothingItem.Name + ".png";
+
+	<img src="@ClothingImagePath" alt="@ClothingItem.NameDecode" class="doll-clothing" />
+}
