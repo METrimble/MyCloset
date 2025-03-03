@@ -11,9 +11,19 @@
 
 <div class="clothing-container">
 	@{
+		// Clothing type tabs
+		foreach (ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
+		{
+			<label>View: @Enum.GetName(ClothingType)</label>
+			<input type="button" class="view-clothingtype-bttn" value="@Enum.GetName(ClothingType)" onclick="openClothingtypeTab(this.value)" />
+		}
+
+		// Clothing type list 
 		foreach(ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
 		{
-			<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
+			<div style="display: none" class="clothing-type-tab" id="tab-@Enum.GetName(ClothingType)">
+				<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
+			</div>
 		}
 	}
 </div>
@@ -29,11 +39,30 @@
 						data: {Id: clicked.val()},
 						success: function(res)
 						{
-							console.log("successful");
 							$(".doll-container").html(res);
 						}
 				});
 			});
 		});
+
+		function openClothingtypeTab(clothingType)
+		{
+			// Get the selected clothing type tab 
+			var selectedClothingTabId = "tab-" + clothingType.toString();
+			var selecetedClothingTab = document.getElementById(selectedClothingTabId);
+
+			// Get all other clothing type tabs
+			var allClothingTabs = document.getElementsByClassName("clothing-type-tab");
+
+			// set all tabs to hidden
+			for(let tab of allClothingTabs)
+				tab.style.display = "none";
+
+			// set the selected tab to block 
+			if(selecetedClothingTab.style.display === "none")
+				selecetedClothingTab.style.display = "block";
+			else
+				selecetedClothingTab.style.display = "none";
+		}
 	</script>
 }
