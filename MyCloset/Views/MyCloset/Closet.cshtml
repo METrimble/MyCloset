@@ -1,5 +1,4 @@
 ﻿@using MyCloset.ViewModels
-@using System.Web.Mvc.Ajax
 
 @model MyCloset.ViewModels.MyClosetViewModel
 @{
@@ -28,7 +27,6 @@
 						type: "POST",
 						url: "MyCloset/OnSelectClothingItem",
 						data: {Id: clicked.val()},
-						async: false,
 						success: function(res)
 						{
 							console.log("successful");

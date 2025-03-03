@@ -22,5 +22,23 @@
         public bool IsBase { get; set; }
         public string ImageName { get; set; }
         public string CroppedImageName { get; set; }
-    }
+
+		// Is Base Top
+		public bool IsBaseTop()
+		{
+			if (this.Type == ClothingType.Top && this.IsBase)
+				return true;
+
+			return false;
+		}
+
+		// Is Base Bottom
+		public bool IsBaseBottom()
+		{
+			if (this.Type == ClothingType.Bottoms && this.IsBase)
+				return true;
+
+			return false;
+		}
+	}
 }
