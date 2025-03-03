@@ -1,0 +1,35 @@
+﻿@using MyCloset.Models
+@model Tuple<MyCloset.ViewModels.MyClosetViewModel, ClothingType>
+@{
+}
+
+<form asp-controller="MyCloset"
+	  asp-action="OnSelectClothingItem"
+	  method="POST">
+	@{
+		<p>Current Time @DateTime.Now</p>
+
+		var Selected = false;
+
+		foreach (var ClothingItem in Model.Item1.ClothingItems)
+		if (ClothingItem.Type == Model.Item2 && !ClothingItem.IsBase)
+		{
+			string ClothingImagePath = Model.Item1.BlobContainerUri + "/" + ClothingItem.CroppedImageName;
+
+			// If the clothing item exists on the doll, pre-select it
+			if (Model.Item1.Doll.ClothingItems.Any(c => ClothingItem.Id == c.Id))
+				Selected = true;
+			else
+				Selected = false;
+
+			<input type="checkbox"
+				   name="Id"
+				   value="@ClothingItem.Id"
+				   checked="@Selected"
+				   class="clothing-checkbox"
+				   id="clothing-check-@ClothingItem.Name" />
+
+			<img src=@ClothingImagePath alt=@ClothingItem.NameDecode />
+		}
+	}
+</form>

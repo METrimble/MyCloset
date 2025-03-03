@@ -7,30 +7,17 @@
 }
 
 <div class="doll-container">
-	<partial name="~/Views/Shared/_Doll.cshtml" model="@new Tuple<Doll, Uri>(Model.Doll, Model.BlobContainerUri)"></partial>
+		<partial name="~/Views/Shared/_Doll.cshtml" model="@new Tuple<Doll, Uri>(Model.Doll, Model.BlobContainerUri)"></partial>
 </div>
 
-<form method="POST" asp-controller="MyCloset" asp-action="OnSelectClothingItem">
+<div class="clothing-container">
 	@{
-		<p>Current Time @DateTime.Now</p>
-
-		var Selected = false;
-
-		foreach (var ClothingItem in Model.ClothingItems) if (ClothingItem.Type == ClothingType.Top)
+		foreach(ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
 		{
-			string ClothingImagePath = Model.BlobContainerUri + "/" + ClothingItem.CroppedImageName;
-
-			// If the clothing item exists on the doll, select it 
-			if(Model.Doll.ClothingItems.Any(c => ClothingItem.Id == c.Id))
-				Selected = true;
-			else
-				Selected = false;
-
-			<input type="checkbox" name="@ClothingItem.Name" value="@ClothingItem.Id" checked="@Selected" class="clothing-checkbox" />
-			<img src=@ClothingImagePath alt=@ClothingItem.NameDecode />
+			<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
 		}
 	}
-</form>
+</div>
 
 @section Scripts {
 	<script>
@@ -41,13 +28,12 @@
 						type: "POST",
 						url: "MyCloset/OnSelectClothingItem",
 						data: {Id: clicked.val()},
-						success: function(data)
+						success: function(res)
 						{
-						},
-						error: function()
-						{
+							console.log("successful");
+							$(".doll-container").html(res);
 						}
-				})
+				});
 			});
 		});
 	</script>

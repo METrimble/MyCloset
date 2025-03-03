@@ -19,6 +19,7 @@
         public string NameDecode { get; set; }
         public ClothingType Type { get; set; }
         public int StackType { get; set; }
+        public bool IsBase { get; set; }
         public string ImageName { get; set; }
         public string CroppedImageName { get; set; }
     }

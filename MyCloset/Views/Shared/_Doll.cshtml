@@ -4,6 +4,7 @@
 }
 
 <img src="~/images/doll.png" alt="Doll" class="doll-image" />
+<p>Current Time @DateTime.Now</p>
 
 @foreach (var ClothingItem in Model.Item1.ClothingItems.OrderBy(c => c.StackType).ToList())
 {
