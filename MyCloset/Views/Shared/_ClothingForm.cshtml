@@ -12,13 +12,14 @@
 		{
 			string ClothingImagePath = Model.Item1.BlobContainerUri + "/" + ClothingItem.CroppedImageName;
 
-			<input type="checkbox"
-				   name="Id"
-				   value="@ClothingItem.Id"
-				   class="clothing-checkbox"
-				   id="clothing-check-@ClothingItem.Name" />
-
-			<img src=@ClothingImagePath alt=@ClothingItem.NameDecode />
+			<div class="clothing-item">
+				<img src=@ClothingImagePath alt=@ClothingItem.NameDecode class="clothing-img" />
+				<input type="checkbox"
+					   name="Id"
+					   value="@ClothingItem.Id"
+					   class="clothing-checkbox"
+					   id="clothing-check-@ClothingItem.Name" />
+			</div>
 		}
 	}
 </form>

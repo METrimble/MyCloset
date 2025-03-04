@@ -5,27 +5,26 @@
 	ViewData["Title"] = "Closet";
 }
 
-<div class="doll-container">
-		<partial name="~/Views/Shared/_Doll.cshtml" model="@new Tuple<Doll, Uri>(Model.Doll, Model.BlobContainerUri)"></partial>
+<div id="outfitbuilder-logo-container">
+	<img src="~/images/mainlogo2.png" alt="mycloset-logo" id="outfitbuilder-logo-image"/>
 </div>
 
-<div class="clothing-container">
-	@{
-		// Clothing type tabs
-		foreach (ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
-		{
-			<label>View: @Enum.GetName(ClothingType)</label>
-			<input type="button" class="view-clothingtype-bttn" value="@Enum.GetName(ClothingType)" onclick="openClothingtypeTab(this.value)" />
+<div id="outfit-builder">
+	<div class="doll-container">
+			<partial name="~/Views/Shared/_Doll.cshtml" model="@new Tuple<Doll, Uri>(Model.Doll, Model.BlobContainerUri)"></partial>
+	</div>
+	
+	<div class="clothing-container">
+		@{
+			// Clothing type list 
+			foreach(ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
+			{
+				<div style="display: none" class="clothing-type-tab" id="tab-@Enum.GetName(ClothingType)">
+					<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
+				</div>
+			}
 		}
-
-		// Clothing type list 
-		foreach(ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
-		{
-			<div style="display: none" class="clothing-type-tab" id="tab-@Enum.GetName(ClothingType)">
-				<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
-			</div>
-		}
-	}
+	</div>
 </div>
 
 @section Scripts {

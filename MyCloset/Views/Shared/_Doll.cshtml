@@ -3,12 +3,29 @@
 @{
 }
 
-<img src="~/images/doll.png" alt="Doll" class="doll-image" />
-<p>Current Time @DateTime.Now</p>
+<img src="~/images/doll.png" alt="Doll" class="doll-images" />
 
-@foreach (var ClothingItem in Model.Item1.ClothingItems.OrderBy(c => c.StackType).ToList())
-{
-	string ClothingImagePath = Model.Item2 + "/" + ClothingItem.Name + ".png";
+<div id="equipped-clothing">
+	@{
+		// Equipped doll clothing
+		foreach (var ClothingItem in Model.Item1.ClothingItems.OrderBy(c => c.StackType).ToList())
+		{
+			string ClothingImagePath = Model.Item2 + "/" + ClothingItem.Name + ".png";
+			<img src="@ClothingImagePath" alt="@ClothingItem.NameDecode" class="doll-images" />
+		}
+	}
+</div>
 
-	<img src="@ClothingImagePath" alt="@ClothingItem.NameDecode" class="doll-clothing" />
-}
+<div id="clothing-tab-bttn-container">
+	@{
+		// Clothing tabs
+		foreach (ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
+		{
+			<button class="clothing-tab-bttn" 
+					value="@Enum.GetName(ClothingType)" 
+					onclick="openClothingtypeTab(this.value)">
+				<img src="~/images/@Enum.GetName(ClothingType)icon.png" class="clothing-tab-bttn-img"/>
+			</button>
+		}
+	}
+</div>
