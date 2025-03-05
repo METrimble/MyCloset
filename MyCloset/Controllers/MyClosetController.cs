@@ -82,6 +82,7 @@ namespace MyCloset.Controllers
 				MyClosetParam.Doll.AddClothingItemToDoll(SelectedClothingItem);
 			}
 
+			// Return a partial view of the doll, so only the doll partial is refreshed
 			return PartialView("_Doll", new Tuple<Doll, Uri>(MyClosetParam.Doll, MyClosetParam.BlobContainerUri));
 		}
 	}

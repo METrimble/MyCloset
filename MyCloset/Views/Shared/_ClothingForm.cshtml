@@ -7,6 +7,9 @@
 	  asp-action="OnSelectClothingItem"
 	  method="POST">
 	@{
+		// Clothing form 
+		// displays all the clothing of a given clothing type 
+		// each can be selected to view on the doll 
 		foreach (var ClothingItem in Model.Item1.ClothingItems)
 		if (ClothingItem.Type == Model.Item2 && !ClothingItem.IsBase)
 		{

@@ -10,6 +10,7 @@
 		// Equipped doll clothing
 		foreach (var ClothingItem in Model.Item1.ClothingItems.OrderBy(c => c.StackType).ToList())
 		{
+			// Display the clothing image
 			string ClothingImagePath = Model.Item2 + "/" + ClothingItem.Name + ".png";
 			<img src="@ClothingImagePath" alt="@ClothingItem.NameDecode" class="doll-images" />
 		}
@@ -21,6 +22,7 @@
 		// Clothing tabs
 		foreach (ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
 		{
+			// onclick triggers javascript function which toggles the displayed tab
 			<button class="clothing-tab-bttn" 
 					value="@Enum.GetName(ClothingType)" 
 					onclick="openClothingtypeTab(this.value)">

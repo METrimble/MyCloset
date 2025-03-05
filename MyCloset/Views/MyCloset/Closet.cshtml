@@ -19,6 +19,7 @@
 			// Clothing type list 
 			foreach(ClothingType ClothingType in Enum.GetValues(typeof(ClothingType)))
 			{
+				// display the tab of clothing of a specific type 
 				<div style="display: none" class="clothing-type-tab" id="tab-@Enum.GetName(ClothingType)">
 					<partial name="~/Views/Shared/_ClothingForm.cshtml" model="@new Tuple<MyClosetViewModel, ClothingType>(Model, ClothingType)"></partial>
 				</div>
@@ -32,12 +33,17 @@
 		$(document).ready(function () {
 			$('.clothing-checkbox').change(function() {
 				var clicked = $(this);
+
+				// Ajax POST call to the controller post function 
+				// changes currently equipped clothing on doll obj
 				$.ajax({
 						type: "POST",
 						url: "MyCloset/OnSelectClothingItem",
 						data: {Id: clicked.val()},
 						success: function(res)
 						{
+							// Doll container w/partial view 
+							// refreshes using the returned partial
 							$(".doll-container").html(res);
 						}
 				});

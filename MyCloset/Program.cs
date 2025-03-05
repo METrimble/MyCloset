@@ -32,7 +32,7 @@ else
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(Connection));
 
-// Connect to Azure Blob Storage Account using default azure credential
+// Connect to Azure Blob Storage Account using default azure credential - Currently irrelevent (using public URI)
 builder.Services.AddAzureClients(clientBuilder =>
 {
 	clientBuilder.AddBlobServiceClient(
