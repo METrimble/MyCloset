@@ -19,5 +19,4 @@ This project is still currently a work in progress. Future features will include
 - AJAX and jquery used to request data from server without full page refresh
 - Frontend built using html, css, and javascript
 
-
-
+![Azure Storage Account](https://github.com/user-attachments/assets/ccf0f24e-f1f7-4881-81ed-0916a47bec74)
