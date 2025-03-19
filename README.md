@@ -2,6 +2,7 @@
 ### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom drawn. 
 
 ## Try It Now: https://my-closet.azurewebsites.net/
+![image](https://github.com/user-attachments/assets/ef83c120-9ba8-4201-9d70-25b080d06846)
 
 ## Future Features
 This project is still currently a work in progress. Future features will include...
