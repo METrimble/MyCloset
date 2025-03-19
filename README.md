@@ -2,6 +2,7 @@
 ### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom drawn. 
 
 ## Try It Now: https://my-closet.azurewebsites.net/
+# NOTE: This website uses the Serverless free tier for Azure SQL Databases. This may cause the initial load of the website to timeout, as the database is resuming services.  
 ![image](https://github.com/user-attachments/assets/ef83c120-9ba8-4201-9d70-25b080d06846)
 
 ## Future Features
