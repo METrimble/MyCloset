@@ -2,14 +2,12 @@
 ### MyCloset is a simple web app aimed to help me pick out outfits and make smart clothing purchases. All assets are custom drawn. 
 
 ## Try It Now: https://my-closet.azurewebsites.net/
-Note: the lowest tier version of Azure SQL Database is used so the database may take a second to resume. You may need to refresh the website multiple times before it loads. This is currently being patched
 
 ## Future Features
 This project is still currently a work in progress. Future features will include...
 - More clothing options
 - Multiple user sessions
 - Better loading of clothing on doll
-- Patch to database resume bug
 
 ## About 
 - Deployed using Azure App services 
